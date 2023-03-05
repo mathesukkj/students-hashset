@@ -15,6 +15,8 @@ public class App {
 
             System.out.print("Total students: ");
             System.out.println(set.size());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
