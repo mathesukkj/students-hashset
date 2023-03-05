@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
 public class User {
     private int code;
 
@@ -33,6 +37,20 @@ public class User {
         if (code != other.code)
             return false;
         return true;
+    }
+
+    public static Set<User> readUsers(Scanner s, int qty) {
+        Set<User> set = new HashSet<>();
+
+        for (int i = 0; i < qty; i++) {
+            System.out.print("How many students for Course " + (i + 1) + "? ");
+            int n = s.nextInt();
+            for (int j = 0; j < n; j++) {
+                set.add(new User(s.nextInt()));
+            }
+        }
+
+        return set;
     }
 
 }
